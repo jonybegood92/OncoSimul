@@ -10,7 +10,33 @@
   
   \code{save}.
 }
-
+\usage{
+ spaceSimul(fp, model = "Exp", 
+                numPassengers = 0, mu = 1e-6, muEF = NULL,
+                detectionSize = 1e8, detectionDrivers = 4,
+                detectionProb = NA,
+                sampleEvery = ifelse(model \%in\% c("Bozic", "Exp"), 1,
+                             0.025),
+                initSize = 500, s = 0.1, sh = -1,
+                K = sum(initSize)/(exp(1) - 1), keepEvery = sampleEvery,
+                minDetectDrvCloneSz = "auto",
+                extraTime = 0,
+                finalTime = 0.25 * 25 * 365, onlyCancer = FALSE,
+                keepPhylog = FALSE,
+                mutationPropGrowth = ifelse(model == "Bozic",
+                                                       FALSE, TRUE),
+                max.memory = 2000, max.wall.time = 200,
+                max.num.tries = 500,
+                errorHitWallTime = TRUE,
+                errorHitMaxTries = TRUE,
+                verbosity = 0,
+                initMutant = NULL,
+                AND_DrvProbExit = FALSE,
+                fixation = NULL,
+                seed = NULL,
+                interventions = NULL,
+                userVars = NULL,
+                rules = NULL)
 \arguments{
   \item{file}{a connection or a character string giving the
     name of the file to load.}
