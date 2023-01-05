@@ -1,4 +1,5 @@
 \name{spaceSimul}
+\alias{spaceSimul}
 \alias{oncoSimulIndiv}
 \title{
   Simulation of tumor progression in space 1D 2D and 3D by demes.
