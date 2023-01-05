@@ -19,12 +19,11 @@
 }
 \examples{
 ## save all data
-save(list = ls(), file= "all.RData")
+save(list = ls(), file= "spaceSimul.RData")
 
 ## restore the saved values to the current environment
-load("all.RData")
+load("spaceSimul.RData")
 
 ## restore the saved values to the workspace
-load("all.RData", .GlobalEnv)
+load("spaceSimul.RData", .GlobalEnv)
 }
-\keyword{file}
