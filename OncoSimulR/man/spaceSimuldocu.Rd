@@ -46,7 +46,7 @@
   
   spaceSimul (dimension,
                 maxSpace =,
-                demePosition, # lista de vectores (default = aleatorio)
+                demePosition,
                 initSize = 500,
                 initMutant = Null?,
                 initMutantSize,
