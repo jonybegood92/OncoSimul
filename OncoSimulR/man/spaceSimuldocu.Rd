@@ -1,6 +1,11 @@
 \name{spaceSimul}
-\title{spaceSimul}
+\alias{oncoSimulIndiv}
+\title{
+  Simulates tumor progression in space 1D 2D and 3D by demes.
+}
 \description{
+  Simulates tumor progression in space with environment and genotypes restriction. Demes are conglomerated cells whith probabilities of migration, death and expansion.
+  
   
   \code{save}.
 }
