@@ -4,7 +4,7 @@
   Simulation of tumor progression in space 1D 2D and 3D by demes.
 }
 \description{
-  Simulates tumor progression in space with environment and genotypes restrictions. Demes are conglomerated cells whith probabilities of migration, death and expansion.
+  Simulates tumor progression in space with environment and genotypes restrictions. Demes are conglomerated cells whith probabilities of migration, birth and death.
   
   
   \code{save}.
