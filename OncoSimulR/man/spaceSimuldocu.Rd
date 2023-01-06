@@ -68,7 +68,7 @@
 \arguments{
 
   \item{dimension}{
-    Dimension between 1D, 2D and 3D.
+    Dimensions 1D, 2D and 3D.
     
    }
   
