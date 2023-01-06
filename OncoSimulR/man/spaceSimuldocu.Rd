@@ -66,20 +66,119 @@
 
 }
 \arguments{
-  
-\item{model}{ default model "McFarlandLog", "McFarlandLogD"
-  (the last two can be abbreviated to "McFL" and "McFLD",
-  respectively). (See vignette for the difference
-  between "McFL" and "McFLD": in the former, death rate = \eqn{\log(1 +
-  N/K)} where \eqn{K} is the initial equilibrium population size; when
-  using "McFLD", death rate = \eqn{\max(1, \log(1 + N/K))}, so that death
-  rate never goes below 1.).
 
-  \item{file}{a connection or a character string giving the
-    name of the file to load.}
-  \item{envir}{the environment where the data should be
-    loaded.}
-}
+  \item{dimension}{
+    Dimension between 1D, 2D and 3D.
+    
+   }
+  
+  \item{maxSpace}{
+    Maximum number of space that the simulation can be created futher development.
+    
+   }
+  
+  \item{demeposition}{
+    This is in develepment. It gives the option tu start with several Demes in 
+    random space.
+    
+   }
+  
+  \item{initMutantSize}{
+    
+    
+   }
+  
+  \item{migrationProb}{
+    Deme Migration probability to nearby spaces 
+   }   
+  
+  \item{largeDistanceMigrationProb}{
+    Deme Migration probability to random spaces (further development)
+   }    
+  
+  \item{maxDemes}{
+    
+    Maximum number of demes that the simulation can create.   
+  
+  }    
+  
+  \item{maxIterations}{
+    
+    Maximum number of iterations that the simulation can make   
+  
+  }  
+  
+  \item{spatialKeepEvery}{
+    
+   How many iterations are saved per simulation.
+  
+  }  
+  \item{model}{ default model "McFarlandLog", "McFarlandLogD"
+    (the last two can be abbreviated to "McFL" and "McFLD",
+    respectively). (See vignette for the difference
+    between "McFL" and "McFLD": in the former, death rate = \eqn{\log(1 +
+    N/K)} where \eqn{K} is the initial equilibrium population size; when
+    using "McFLD", death rate = \eqn{\max(1, \log(1 + N/K))}, so that death
+    rate never goes below 1.).
+
+  }    
+
+  \item{K}{
+    Initial population equilibrium size in the McFarland models.
+
+  }
+
+  \item{initSize}{
+    Initial population size. If you are passing more than one
+    \code{initMutant}, the initial population sizes of each
+    clone/species/genotype, given in the same order as in the
+    \code{initMutant} vector. \code{initMutant} thus allows to start the
+    simulation from arbitrary population compositions. Combined with
+    \code{mu} it allows for multispecies simulations (see the vignette for
+    examples).
+  }
+
+   \item{initMutant}{For v.2: a string with the mutations of the initial
+    mutant, if any. This is the same format as for
+    \code{\link{evalGenotype}}. The default (if you pass nothing) is to
+    start the simulation from the wildtype genotype with nothing mutated.
+    For v.1 we no longer accept initMutant: it will be ignored.
+
+    (\code{evalGenotype} also accepts the genotype as a numeric vector;
+    \code{initMutant} must be a character string.)
+  }
+
+
+  \item{mu}{
+    Mutation rate. Can be a single value or a named vector. If a single
+    value, all genes will have the same mutation rate. If a named vector,
+    the entries in the vector specify the gene-specific mutation rate. If
+    you pass a vector, it must be named, and it must have entries for all
+    the genes in the fitness specification. Passing a vector is only
+    available when using fitnessEffects objects for fitness specification.
+    Mutation rates \code{<10^-20} are not accepted.
+    See also \code{mutationPropGrowth}. 
+  }
+
+  \item{sampleEvery}{
+
+    How often the whole population is sampled. This is not the same as the
+    interval between successive samples that are kept or stored (for that,
+    see \code{keepEvery}).
+
+    For very fast growing clones, you might need to have a small value
+    here to minimize possible numerical problems (such as huge increase in
+    population size between two successive samples that can then lead to
+    problems for random number generators). Likewise, for models with
+    density dependence (such as McF) this value should be very small.
+
+  }
+
+  \item{finalTime}{
+    What is the maximum number of time units that the simulation can
+    run. Set to NA to disable this limit.
+
+  }
 }
 \examples{
 ## save all data
