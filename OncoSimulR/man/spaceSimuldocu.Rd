@@ -187,16 +187,28 @@
   following components:  
   
  
-  \item{SpatialSummary }{.}
+  \item{SpatialSummary }{ dataframe with the following rows: 
+                         Genotypes (lsit of Genotypes), 
+                         Population (Cell population of each genotype ), 
+                         Demes (Genotypes of each deme), 
+                         WinDemes (Largest genotype in each deme)
+                        }
   
-  \item{TotalPopulation }{.}
+  \item{TotalPopulation }{
+  Total number of cells in the simulation.
+  }
   
-  \item{NumIter }{.}
+  \item{NumIter }{
+  Number of iterations done.
+  }
   
-  \item{NumDemes }{.}
+  \item{NumDemes }{
+  Number of demes created by the simulation
+  }
   
-  \item{TimeForIter }{.}
-  
+  \item{TimeForIter }{
+  How long each iteration took to be created.
+  }
   
   For \code{oncoSimulIndiv} a list, of class "oncosimul", with the
   following components:
