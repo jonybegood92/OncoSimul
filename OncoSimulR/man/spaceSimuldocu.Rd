@@ -43,25 +43,38 @@
                 interventions = NULL,
                 userVars = NULL,
                 rules = NULL)
-  
+
+
   spaceSimul (dimension,
                 maxSpace =,
                 demePosition,
-                initSize = 500,
-                initMutant = Null?,
                 initMutantSize,
                 migrationProb,
                 largeDistanceMigrationProb,
+                maxDemes, 
+                maxIterations,
+                spatialKeepEvery,
+                fitnessEffects ,
+                model = "McFL",
+                K = sum(initSize)/(exp(1) - 1), 
+                initSize = 500,
+                initMutant = Null?,
                 mu = 1e-6,
                 sampleEvery = ifelse(model %in% c("Bozic","Exp"), 1, 0.025). ,
-                finalTime = 0.25 * 25 * 365, 
-                maxDemes, 
-                maxIterations, 
-                model = "McFL", 
-                spatialKeepEvery)
+                finalTime = 0.25 * 25 * 365,   
+                )
 
 }
 \arguments{
+  
+\item{model}{ default model "McFarlandLog", "McFarlandLogD"
+  (the last two can be abbreviated to "McFL" and "McFLD",
+  respectively). (See vignette for the difference
+  between "McFL" and "McFLD": in the former, death rate = \eqn{\log(1 +
+  N/K)} where \eqn{K} is the initial equilibrium population size; when
+  using "McFLD", death rate = \eqn{\max(1, \log(1 + N/K))}, so that death
+  rate never goes below 1.).
+
   \item{file}{a connection or a character string giving the
     name of the file to load.}
   \item{envir}{the environment where the data should be
