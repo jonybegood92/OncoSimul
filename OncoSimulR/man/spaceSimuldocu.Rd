@@ -2,7 +2,7 @@
 \alias{spaceSimul}
 \alias{oncoSimulIndiv}
 \title{
-  Simulation of tumor progression in space 1D 2D and 3D by demes.
+ Tumor progression and migration simulator in 1D, 2D and 3D
 }
 \description{
   Simulates tumor progression in space with environment and genotypes restrictions. Demes are conglomerated cells with migration, birth and death probabilities.
