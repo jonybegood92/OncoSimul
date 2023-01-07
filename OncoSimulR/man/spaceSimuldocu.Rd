@@ -80,7 +80,7 @@
    }
   
   \item{demeposition}{
-    It gives the option tu start with several Demes in 
+    It gives the option with one or more demes to start in
     random space. (futher development)
     
    }
@@ -91,7 +91,9 @@
    }
   
   \item{migrationProb}{
-    Deme Migration probability to nearby spaces 
+   Deme Migration probability to nearby spaces. This is a 
+   
+   
    }   
   
   \item{largeDistanceMigrationProb}{
