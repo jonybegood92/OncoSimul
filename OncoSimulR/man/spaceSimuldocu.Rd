@@ -121,7 +121,7 @@
   
   \item{spatialKeepEvery}{
     
-   How many interations needed to save them. ???
+   Number of iterations needed to save the values. ???
   
   }  
   \item{model}{ default model "McFarlandLog", "McFarlandLogD"
