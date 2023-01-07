@@ -243,59 +243,59 @@
   For \code{oncoSimulIndiv} a list, of class "oncosimul", with the
   following components:
  
-  \item{pops.by.time }{A matrix of the population sizes of the clones,
+  \item{pops.by.time }{ A matrix of the population sizes of the clones,
   with clones in columns and time in row. Not all clones are shown here,
   only those that were present in at least on of the keepEvery samples.}
   
-  \item{NumClones   }{Total number of clones in the above matrix. This
+  \item{NumClones   }{ Total number of clones in the above matrix. This
   is not the total number of distinct clones that have appeared over all
   simulations (which is likely to be larger or much larger).}
 
-  \item{TotalPopSize}{Total population size at the end.} ????
-
-  \item{Genotypes}{A matrix of genotypes. For each of the clones in the
+  \item{TotalPopSize}{ Total population size at the end. ????
+} 
+  \item{Genotypes}{ A matrix of genotypes. For each of the clones in the
     pops.by.time matrix, its genotype, with a 0 if the gene is not
     mutated and a 1 if it is mutated.}
 
   
-  \item{MaxNumDrivers}{The largest number of mutated driver genes ever
+  \item{MaxNumDrivers}{ The largest number of mutated driver genes ever
     seen in the simulation in any clone.}
 
-  \item{MaxDriversLast}{The largest number of mutated drivers in any
+  \item{MaxDriversLast}{ The largest number of mutated drivers in any
     clone     at the   end of the simulation.}
 
-  \item{NumDriversLargestPop}{The number of mutated driver genes in the
+  \item{NumDriversLargestPop}{ The number of mutated driver genes in the
     clone with largest population size. }
 
-  \item{LargestClone}{Population size of the clone with largest number
+  \item{LargestClone}{ Population size of the clone with largest number
     of population size.}
 
-  \item{PropLargestPopLast}{Ratio of LargestClone/TotalPopSize}
+  \item{PropLargestPopLast}{ Ratio of LargestClone/TotalPopSize}
 
-  \item{FinalTime}{The time (in time units) at the end of the
+  \item{FinalTime}{ The time (in time units) at the end of the
     simulation.}
 
-  \item{NumIter}{The number of iterations of the BNB algorithm.}
+  \item{NumIter}{ The number of iterations of the BNB algorithm.}
 
-  \item{HittedWallTime}{TRUE if we reached the limit of max.wall.time. FALSE
+  \item{HittedWallTime}{ TRUE if we reached the limit of max.wall.time. FALSE
     otherwise.}
 
-  \item{TotalPresentDrivers}{The total number of mutated driver genes,
+  \item{TotalPresentDrivers}{ The total number of mutated driver genes,
     whether or not in the same clone. The number of elements in
     \code{OccurringDrivers}, below.}
 
-  \item{CountByDriver}{A vector of length number of drivers, with the
+  \item{CountByDriver}{ A vector of length number of drivers, with the
     count of the number of clones that have that driver mutated.}
 
-  \item{OccurringDrivers}{The actual number of drivers mutated.}
+  \item{OccurringDrivers}{ The actual number of drivers mutated.}
 
-  \item{PerSampleStats}{A 5 column matrix with a row for each sampling
+  \item{PerSampleStats}{ A 5 column matrix with a row for each sampling
     period. The columns are: total population size, population size of the
     largest clone, the ratio of the two, the largest number of drivers in
     any clone, and the number of drivers in the clone with the largest
     population size.}
   
-  \item{other}{A list that contains statistics for an estimate of the
+  \item{other}{ A list that contains statistics for an estimate of the
     simulation error when using the McFarland model as well as other
     statistics. For the McFarland model, the relevant value is errorMF,
     which is -99 unless in the McFarland model. For the McFarland model it
