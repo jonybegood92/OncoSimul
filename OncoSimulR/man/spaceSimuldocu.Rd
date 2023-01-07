@@ -73,7 +73,7 @@
    }
   
   \item{maxSpace}{
-    Maximum number of space that the simulation can be created futher development.
+    Maximum number of space that the simulation can be created (futher development).
     
    }
   
@@ -98,7 +98,8 @@
   
   \item{maxDemes}{
     
-    Maximum number of demes that the simulation can create.   
+   Maximum number of demes that the simulation can create. This is a number given to stop the simulation
+   for higher numbers, higher requirements needed. Only numbers higher than 0 permited. default = ???
   
   }    
   
