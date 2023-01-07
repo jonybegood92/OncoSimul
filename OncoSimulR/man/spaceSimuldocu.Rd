@@ -46,7 +46,7 @@
 
 
   spaceSimul (dimension,
-                maxSpace =,
+                maxSpace,
                 demePosition,
                 initMutantSize,
                 migrationProb,
@@ -54,7 +54,7 @@
                 maxDemes, 
                 maxIterations,
                 spatialKeepEvery,
-                fitnessEffects ,
+                fitness,
                 model = "McFL",
                 K = sum(initSize)/(exp(1) - 1), 
                 initSize = 500,
@@ -122,7 +122,21 @@
     
    Number of iterations needed to save the values. ???
   
-  }  
+  } 
+ 
+  \item{fitness}{
+     
+    It is the same value of fp in oncoSimulInviv. Either a poset that specifies the order restrictions (see
+    \code{\link{poset}} if you want to use the specification as in
+    v.1. Otherwise, a fitnessEffects object (see
+    \code{\link{allFitnessEffects}}). You must always use a fitnessEffects object
+    when you are in a frequency dependent fitness simulation; of course in this case 
+    fp$frequencyDependentFitness must be TRUE.
+
+    Other arguments below (s, sh, numPassengers) make sense only if you
+    use a poset, as they are included in the fitnessEffects object.
+    
+   }
   \item{model}{ default model "McFarlandLog", "McFarlandLogD"
     (the last two can be abbreviated to "McFL" and "McFLD",
     respectively). (See vignette for the difference
