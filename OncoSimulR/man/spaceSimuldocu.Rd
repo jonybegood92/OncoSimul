@@ -48,7 +48,7 @@
   spaceSimul (dimension,
                 maxSpace,
                 demePosition,
-                initMutantSize,
+                demesComposition,
                 migrationProb,
                 largeDistanceMigrationProb,
                 maxDemes, 
@@ -60,7 +60,7 @@
                 initSize = 500,
                 initMutant = Null,
                 mu = 1e-6,
-                sampleEvery = ifelse(model %in% c("Bozic","Exp"), 1, 0.025). ,
+                sampleEvery = ifelse(model %in% c("Bozic","Exp"), 1, 0.025),
                 finalTime = 0.25 * 25 * 365,   
                 )
 
@@ -83,12 +83,11 @@
     random space. (futher development)
     
    }
-  
-  \item{initMutantSize}{
-    ???
-    
+ 
+  \item{demesComposition}{
+   A list of lists with iniMutant and initSize of each deme (futher development)  
    }
-  
+ 
   \item{migrationProb}{
    Deme Migration probability to nearby spaces. This must be a value between 0 to 1.
    Default = 0.1
