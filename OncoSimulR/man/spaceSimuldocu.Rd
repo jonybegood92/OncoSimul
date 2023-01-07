@@ -69,23 +69,24 @@
 \arguments{
 
   \item{dimension}{
-    Dimensions 1D, 2D and 3D.
+   Dimensions 1D, 2D and 3D. It must be added. 
+   Only numbers between 1-3 accepted 
     
    }
   
   \item{maxSpace}{
-    Maximum number of space that the simulation can be created (futher development).
+   Maximum number of space that the simulation can be created (futher development).
     
    }
   
   \item{demeposition}{
-    This is in develepment. It gives the option tu start with several Demes in 
-    random space.
+    It gives the option tu start with several Demes in 
+    random space. (futher development)
     
    }
   
   \item{initMutantSize}{
-    
+    ???
     
    }
   
