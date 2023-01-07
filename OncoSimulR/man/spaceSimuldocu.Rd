@@ -91,8 +91,8 @@
    }
   
   \item{migrationProb}{
-   Deme Migration probability to nearby spaces. This must be a value between 0 to ??.
-   Default = ??
+   Deme Migration probability to nearby spaces. This must be a value between 0 to 1.
+   Default = 0.1
    
    
    
@@ -106,8 +106,8 @@
   
   \item{maxDemes}{
     
-   Maximum number of demes that the simulation can create. This is a number given to stop the simulation
-   for higher numbers, higher requirements needed. Only numbers higher than 0 permited. default = ???
+   Maximum number of demes that the simulation can create. default = ???. This is a number given to stop the simulation
+   for higher numbers, higher requirements needed. Only numbers higher than 0 permited. 
   
   }    
   
@@ -141,18 +141,19 @@
   }
 
   \item{initSize}{
-    Initial population size. If you are passing more than one
+    Initial population size. default = 500. If you are passing more than one
     \code{initMutant}, the initial population sizes of each
     clone/species/genotype, given in the same order as in the
     \code{initMutant} vector. \code{initMutant} thus allows to start the
     simulation from arbitrary population compositions. Combined with
     \code{mu} it allows for multispecies simulations (see the vignette for
-    examples).  default = 500.
+    examples).
   }
 
    \item{initMutant}{For v.2: a string with the mutations of the initial
-    mutant, if any. This is the same format as for
-    \code{\link{evalGenotype}}. The default (if you pass nothing) is to
+    mutant, if any. 
+    This is the same format as for \code{\link{evalGenotype}}. 
+    The default (if you pass nothing) is to
     start the simulation from the wildtype genotype with nothing mutated.
     For v.1 we no longer accept initMutant: it will be ignored.
 
@@ -162,21 +163,22 @@
 
 
   \item{mu}{
-    Mutation rate. Can be a single value or a named vector. If a single
+    Mutation rate. default = 1e-6. Can be a single value or a named vector. If a single
     value, all genes will have the same mutation rate. If a named vector,
     the entries in the vector specify the gene-specific mutation rate. If
     you pass a vector, it must be named, and it must have entries for all
     the genes in the fitness specification. Passing a vector is only
     available when using fitnessEffects objects for fitness specification.
     Mutation rates \code{<10^-20} are not accepted.
-    See also \code{mutationPropGrowth}. default = 1e-6
+    See also \code{mutationPropGrowth}.
   }
 
   \item{sampleEvery}{
 
-    How often the whole population is sampled. This is not the same as the
+    How often the whole population is sampled. default = ifelse(model %in% c("Bozic","Exp"), 1, 0.025).
+    This is not the same as the
     interval between successive samples that are kept or stored (for that,
-    see \code{keepEvery}). default = ifelse(model %in% c("Bozic","Exp"), 1, 0.025).
+    see \code{keepEvery}). 
 
     For very fast growing clones, you might need to have a small value
     here to minimize possible numerical problems (such as huge increase in
@@ -188,7 +190,7 @@
 
   \item{finalTime}{
     What is the maximum number of time units that the simulation can
-    run. Set to NA to disable this limit. default = 0.25 * 25 * 365
+    run. default = 0.25 * 25 * 365. Set to NA to disable this limit. 
 
   }
 }
@@ -292,7 +294,13 @@
     rate, respectively. The BNB algorithm thrives when those are large.
 }                                        
 
+\references{
+ \url{https://posgrado.uam.es/pluginfile.php/1710132/mod_resource/content/1/TFM_Alberto_Parramon.pdf}
+ \url{
 
+
+
+}
 \examples{
 ## save all data
 save(list = ls(), file= "spaceSimul.RData")
