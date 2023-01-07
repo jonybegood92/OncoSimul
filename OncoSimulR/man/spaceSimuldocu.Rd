@@ -59,7 +59,7 @@
                 model = "McFL",
                 K = sum(initSize)/(exp(1) - 1), 
                 initSize = 500,
-                initMutant = Null?,
+                initMutant = Null,
                 mu = 1e-6,
                 sampleEvery = ifelse(model %in% c("Bozic","Exp"), 1, 0.025). ,
                 finalTime = 0.25 * 25 * 365,   
@@ -151,7 +151,7 @@
   }
 
    \item{initMutant}{For v.2: a string with the mutations of the initial
-    mutant, if any. 
+    mutant, if any. default = null
     This is the same format as for \code{\link{evalGenotype}}. 
     The default (if you pass nothing) is to
     start the simulation from the wildtype genotype with nothing mutated.
@@ -193,6 +193,18 @@
     run. default = 0.25 * 25 * 365. Set to NA to disable this limit. 
 
   }
+}
+
+\details{
+ 
+ The basic program used is OncoSimulIndiv from:
+ \url { https://github.com/rdiaz02/OncoSimul}
+ We basically added some tools after OncoSimulIndiv proces to simulate 
+ the movement in space of the tumour created. We followed some ideas 
+ about how tumor progresion will occur and implemented in the algorithm. 
+ The probability of tomour progresion will be added by the usser, this 
+ gives a tool to the scientists to simulate the process by their own parameters.
+ 
 }
                                                   
 \value{
