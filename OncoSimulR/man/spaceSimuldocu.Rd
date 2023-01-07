@@ -91,13 +91,17 @@
    }
   
   \item{migrationProb}{
-   Deme Migration probability to nearby spaces. This is a 
+   Deme Migration probability to nearby spaces. This must be a value between 0 to ??.
+   Default = ??
+   
    
    
    }   
   
   \item{largeDistanceMigrationProb}{
+   
     Deme Migration probability to random spaces (further development)
+   
    }    
   
   \item{maxDemes}{
@@ -109,13 +113,15 @@
   
   \item{maxIterations}{
     
-    Maximum number of iterations that the simulation can make   
+   Maximum number of iterations that the simulation can make. 
+   it is recomended to check this before running the simulation.
+   default = ???
   
   }  
   
   \item{spatialKeepEvery}{
     
-   How many iterations are saved per simulation.
+   How many interations needed to save them. ???
   
   }  
   \item{model}{ default model "McFarlandLog", "McFarlandLogD"
@@ -200,12 +206,17 @@
                         }
   
   \item{TotalPopulation }{
-  Total number of cells in the simulation.
+   
+  Total number of cells in the simulation. This will be part of a data frame stored while the simulation is runing. ??
+   
   }
   
   \item{NumIter }{
-  Number of iterations done.
+   
+  Number of iterations done. This will
+   
   }
+ 
   
   \item{NumDemes }{
   Number of demes created by the simulation
@@ -217,16 +228,16 @@
   
   For \code{oncoSimulIndiv} a list, of class "oncosimul", with the
   following components:
-  
-    \item{pops.by.time }{A matrix of the population sizes of the clones,
-    with clones in columns and time in row. Not all clones are shown here,
-    only those that were present in at least on of the keepEvery samples.}
+ 
+  \item{pops.by.time }{A matrix of the population sizes of the clones,
+  with clones in columns and time in row. Not all clones are shown here,
+  only those that were present in at least on of the keepEvery samples.}
   
   \item{NumClones   }{Total number of clones in the above matrix. This
   is not the total number of distinct clones that have appeared over all
   simulations (which is likely to be larger or much larger).}
 
-  \item{TotalPopSize}{Total population size at the end.}
+  \item{TotalPopSize}{Total population size at the end.} ????
 
   \item{Genotypes}{A matrix of genotypes. For each of the clones in the
     pops.by.time matrix, its genotype, with a 0 if the gene is not
