@@ -296,9 +296,15 @@
 
 \references{
  \url{https://posgrado.uam.es/pluginfile.php/1710132/mod_resource/content/1/TFM_Alberto_Parramon.pdf}
- \url{
+ \url{https://github.com/rdiaz02/OncoSimul}
 
-
+}
+ 
+\author{
+Jose Maria Casanova,
+Darío González Menéndez,
+Eduardo Diego Lozano,
+Jonathan Rodríguez
 
 }
 \examples{
