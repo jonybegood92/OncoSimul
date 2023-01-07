@@ -135,7 +135,8 @@
   }    
 
   \item{K}{
-    Initial population equilibrium size in the McFarland models.
+   Initial population equilibrium size in the McFarland models.
+   default = sum(initSize)/(exp(1) - 1).
 
   }
 
@@ -146,7 +147,7 @@
     \code{initMutant} vector. \code{initMutant} thus allows to start the
     simulation from arbitrary population compositions. Combined with
     \code{mu} it allows for multispecies simulations (see the vignette for
-    examples).
+    examples).  default = 500.
   }
 
    \item{initMutant}{For v.2: a string with the mutations of the initial
@@ -168,14 +169,14 @@
     the genes in the fitness specification. Passing a vector is only
     available when using fitnessEffects objects for fitness specification.
     Mutation rates \code{<10^-20} are not accepted.
-    See also \code{mutationPropGrowth}. 
+    See also \code{mutationPropGrowth}. default = 1e-6
   }
 
   \item{sampleEvery}{
 
     How often the whole population is sampled. This is not the same as the
     interval between successive samples that are kept or stored (for that,
-    see \code{keepEvery}).
+    see \code{keepEvery}). default = ifelse(model %in% c("Bozic","Exp"), 1, 0.025).
 
     For very fast growing clones, you might need to have a small value
     here to minimize possible numerical problems (such as huge increase in
@@ -187,7 +188,7 @@
 
   \item{finalTime}{
     What is the maximum number of time units that the simulation can
-    run. Set to NA to disable this limit.
+    run. Set to NA to disable this limit. default = 0.25 * 25 * 365
 
   }
 }
