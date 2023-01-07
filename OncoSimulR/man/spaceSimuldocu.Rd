@@ -8,8 +8,7 @@
  Simulates tumor progression by demes in space with environment and genotypes restrictions. 
  Demes are conglomerated cells with migration, birth and death probabilities.
   
-  
-  \code{save}.
+
 }
 \usage{
  oncoSimulIndiv (fp, model = "Exp", 
@@ -198,7 +197,7 @@
 \details{
  
  The basic program used is OncoSimulIndiv from:
- \url { https://github.com/rdiaz02/OncoSimul}
+ https://github.com/rdiaz02/OncoSimul
  We basically added some tools after OncoSimulIndiv proces to simulate 
  the movement in space of the tumour created. We followed some ideas 
  about how tumor progresion will occur and implemented in the algorithm. 
