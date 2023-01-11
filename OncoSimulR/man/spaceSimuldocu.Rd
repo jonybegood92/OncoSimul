@@ -282,7 +282,7 @@
   is not the total number of distinct clones that have appeared over all
   simulations (which is likely to be larger or much larger).}
 
-  \item{TotalPopSize}{ Total population size at the end. ????
+  \item{TotalPopSize}{ Total population size at the end of simulation. 
 } 
   \item{Genotypes}{ 
      A matrix of genotypes. For each of the clones in the
