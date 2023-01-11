@@ -346,7 +346,6 @@
 \references{
  \url{https://posgrado.uam.es/pluginfile.php/1710132/mod_resource/content/1/TFM_Alberto_Parramon.pdf}
  \url{https://github.com/rdiaz02/OncoSimul}
-
 }
 
 \author{
@@ -354,15 +353,7 @@ Jose Maria Casanova,
 Darío González Menéndez,
 Eduardo Diego Lozano,
 Jonathan Rodríguez
-
 }
+                                                  
 \examples{
-## save all data
-save(list = ls(), file= "spaceSimul.RData")
-
-## restore the saved values to the current environment
-load("spaceSimul.RData")
-
-## restore the saved values to the workspace
-load("spaceSimul.RData", .GlobalEnv)
 }
