@@ -50,7 +50,7 @@
                 # demePosition,
                 # demesComposition,
                 # largeDistanceMigrationProb,
-                migrationProb,
+                migrationProb = 0.1,
                 maxDemes = -1, 
                 maxIterations = -1,
                 keepDemeSimul = FALSE,
@@ -70,13 +70,13 @@
 \arguments{
 
   \item{dimension}{
-   Dimensions 1D, 2D and 3D. It must be added. 
+    Dimensions 1D, 2D and 3D. It must be added. 
    Only numbers between 1-3 accepted 
     
    }
   
   \item{maxSpace}{
-   Maximum number of space that the simulation can be created (futher development).
+    Maximum number of space that the simulation can be created (futher development).
     
    }
   
@@ -87,47 +87,60 @@
    }
  
   \item{demesComposition}{
-   A list of lists with iniMutant and initSize of each deme (futher development)  
+    A list of lists with iniMutant and initSize of each deme (futher development)  
    }
  
-  \item{migrationProb}{
-   Deme Migration probability to nearby spaces. This must be a value between 0 to 1.
-   Default = 0.1
-   
-   
-   
-   }   
-  
   \item{largeDistanceMigrationProb}{
    
-    Deme Migration probability to random spaces (further development)
+     Deme Migration probability to random spaces (further development)
    
-   }    
+   }  
+ 
+  \item{migrationProb}{
+    Deme Migration probability to nearby spaces. This must be a value between 0 to 1.
+   Default = 0.1
+   
+   }   
+     
   
   \item{maxDemes}{
     
-   Maximum number of demes that the simulation can create. default = ???. This is a number given to stop the simulation
-   for higher numbers, higher requirements needed. Only numbers higher than 0 permited. 
+    Maximum number of demes that the simulation can create. default = -1. This is a number given to stop the simulation
+   for higher numbers, higher requirements needed. Only numbers higher than 0 permited, 
   
   }    
   
   \item{maxIterations}{
     
-   Maximum number of iterations that the simulation can make. 
+    Maximum number of iterations that the simulation can make. 
    it is recomended to check this before running the simulation.
-   default = ???
+   default = -1
   
   }  
   
   \item{spatialKeepEvery}{
     
-   Number of iterations needed to save the values. ???
+    Number of iterations needed to save the values. default = 1
   
   } 
+
+  \item{KeepDemeSimul}{
+    
+    It keeps the saved information done by the simulation in the memory. default = FALSE 
+  
+  \item{verbosity}{
+    If 0, run silently. Iincreasing values of verbosity
+  provide progressively more information about intermediate steps,
+  possible numerical notes/warnings from the C++ code, etc. Values less
+  than 0 supress some default notes: use with care. 
+   
+  } 
+  
+  }  
  
   \item{fitness}{
      
-    It is the same value of fp in oncoSimulInviv. Either a poset that specifies the order restrictions (see
+     It is the same value of fp in oncoSimulInviv. Either a poset that specifies the order restrictions (see
     \code{\link{poset}} if you want to use the specification as in
     v.1. Otherwise, a fitnessEffects object (see
     \code{\link{allFitnessEffects}}). You must always use a fitnessEffects object
@@ -139,7 +152,7 @@
     
    }
   \item{model}{ default model "McFarlandLog", "McFarlandLogD"
-    (the last two can be abbreviated to "McFL" and "McFLD",
+     (the last two can be abbreviated to "McFL" and "McFLD",
     respectively). (See vignette for the difference
     between "McFL" and "McFLD": in the former, death rate = \eqn{\log(1 +
     N/K)} where \eqn{K} is the initial equilibrium population size; when
@@ -149,7 +162,7 @@
   }    
 
   \item{K}{
-   Initial population equilibrium size in the McFarland models.
+    Initial population equilibrium size in the McFarland models.
    default = sum(initSize)/(exp(1) - 1).
 
   }
@@ -164,7 +177,9 @@
     examples).
   }
 
-   \item{initMutant}{For v.2: a string with the mutations of the initial
+   \item{initMutant}{
+    
+     For v.2: a string with the mutations of the initial
     mutant, if any. default = null
     This is the same format as for \code{\link{evalGenotype}}. 
     The default (if you pass nothing) is to
@@ -177,7 +192,7 @@
 
 
   \item{mu}{
-    Mutation rate. default = 1e-6. Can be a single value or a named vector. If a single
+     Mutation rate. default = 1e-6. Can be a single value or a named vector. If a single
     value, all genes will have the same mutation rate. If a named vector,
     the entries in the vector specify the gene-specific mutation rate. If
     you pass a vector, it must be named, and it must have entries for all
@@ -189,7 +204,7 @@
 
   \item{sampleEvery}{
 
-    How often the whole population is sampled. default = ifelse(model %in% c("Bozic","Exp"), 1, 0.025).
+     How often the whole population is sampled. default = ifelse(model %in% c("Bozic","Exp"), 1, 0.025).
     This is not the same as the
     interval between successive samples that are kept or stored (for that,
     see \code{keepEvery}). 
@@ -203,7 +218,7 @@
   }
 
   \item{finalTime}{
-    What is the maximum number of time units that the simulation can
+     What is the maximum number of time units that the simulation can
     run. default = 0.25 * 25 * 365. Set to NA to disable this limit. 
 
   }
@@ -258,17 +273,20 @@
   For \code{oncoSimulIndiv} a list, of class "oncosimul", with the
   following components:
  
-  \item{pops.by.time }{ A matrix of the population sizes of the clones,
+  \item{pops.by.time }{ 
+   A matrix of the population sizes of the clones,
   with clones in columns and time in row. Not all clones are shown here,
   only those that were present in at least on of the keepEvery samples.}
   
-  \item{NumClones   }{ Total number of clones in the above matrix. This
+  \item{NumClones   }{ 
+   Total number of clones in the above matrix. This
   is not the total number of distinct clones that have appeared over all
   simulations (which is likely to be larger or much larger).}
 
   \item{TotalPopSize}{ Total population size at the end. ????
 } 
-  \item{Genotypes}{ A matrix of genotypes. For each of the clones in the
+  \item{Genotypes}{ 
+     A matrix of genotypes. For each of the clones in the
     pops.by.time matrix, its genotype, with a 0 if the gene is not
     mutated and a 1 if it is mutated.}
 
@@ -295,22 +313,27 @@
   \item{HittedWallTime}{ TRUE if we reached the limit of max.wall.time. FALSE
     otherwise.}
 
-  \item{TotalPresentDrivers}{ The total number of mutated driver genes,
+  \item{TotalPresentDrivers}{ 
+     The total number of mutated driver genes,
     whether or not in the same clone. The number of elements in
     \code{OccurringDrivers}, below.}
 
-  \item{CountByDriver}{ A vector of length number of drivers, with the
+  \item{CountByDriver}{ 
+     A vector of length number of drivers, with the
     count of the number of clones that have that driver mutated.}
 
   \item{OccurringDrivers}{ The actual number of drivers mutated.}
 
-  \item{PerSampleStats}{ A 5 column matrix with a row for each sampling
+  \item{PerSampleStats}{ 
+     A 5 column matrix with a row for each sampling
     period. The columns are: total population size, population size of the
     largest clone, the ratio of the two, the largest number of drivers in
     any clone, and the number of drivers in the clone with the largest
     population size.}
   
-  \item{other}{ A list that contains statistics for an estimate of the
+  \item{other}{ 
+   
+     A list that contains statistics for an estimate of the
     simulation error when using the McFarland model as well as other
     statistics. For the McFarland model, the relevant value is errorMF,
     which is -99 unless in the McFarland model. For the McFarland model it
